@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 
 metadata:
- name: nginx
+ name: resources-demo
  namespace: roboshop
  
 spec:
@@ -13,8 +13,8 @@ spec:
    #soft limit
     requests:
      memory: "64mi" # RAM
-     CPU: "100m" # CPU
+     cpu: "100m" # CPU
    #hard limit
     limits:
      memory: "128mi" #RAM
-     CPU: "150m" #CPU  
+     cpu: "150m" #CPU  

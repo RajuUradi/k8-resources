@@ -4,10 +4,10 @@ metadata:
  name: labels
  namespace: roboshop
 
-labels:
- project: roboshop
- component: frontend
- environment: dev
+ labels:
+  project: roboshop
+  component: frontend
+  environment: dev
 
 spec:
  containers:

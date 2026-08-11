@@ -9,5 +9,5 @@ spec:
    image: nginx:latest
 
  - name: almalinux
-   image: almalinx:9
-     
+   image: almalinux:9
+

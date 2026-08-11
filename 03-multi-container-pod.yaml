@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: multicontainerpod
+
+spec:
+ containers:
+ - name: nginx
+   image: nginx:latest
+
+ - name: almalinux
+   image: almalinx:9
+     

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+ name: nginx-Service
+
+spec:
+ selector: # labels are used as selectors
+ # below labels are from 04-labels.yaml nginx pod
+  project: roboshop
+  component: frontend
+  environment: dev
+
+ ports:
+ - protocol: tcp
+   port: 80 # service port
+   targetport: 80 # containerport
+
+    

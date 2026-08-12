@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: ReplicaSet
 
 metadata:
@@ -34,6 +34,6 @@ spec:
     containers:
      - name: nginx
        image: nginx
-       
+
 #ReplicaSet is namespace-scoped. It creates Pods using template and manages matching Pods using selector, 
 #but only inside the ReplicaSet's namespace.

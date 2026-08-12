@@ -30,7 +30,7 @@ template: # this is defination of pod creation ,based on this only replica set c
      tier: frontend 
      env: dev
 
-   spec:
+  spec:
     containers:
      - name: nginx
        image: nginx

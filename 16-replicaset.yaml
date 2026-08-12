@@ -14,7 +14,7 @@ metadata:
     tier: frontend
     component: frontend
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     # using these labels replica set selects the pod ,# using the labels in the selector only , repliaset selects the pods to create replicas
     matchLabels:

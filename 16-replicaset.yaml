@@ -20,7 +20,7 @@ spec:
    tier: frontend 
    env: dev
 
- template: # this is defination of pod creation ,based on this only replica set creates pods
+template: # this is defination of pod creation ,based on this only replica set creates pods
 
   metadata:
    name: nginx pod

@@ -11,7 +11,7 @@ metadata:
     tier: frontend
     component: frontend
   annotations:
-    kubernetes.io/change-cause: "moving to 1.29.3"
+    kubernetes.io/change-cause: "moving to 1.28.0"
 spec:
   replicas: 10
   selector:

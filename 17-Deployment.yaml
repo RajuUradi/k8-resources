@@ -1,8 +1,5 @@
 
 
-#ReplicaSet is namespace-scoped. It creates Pods using template and manages matching Pods using selector, 
-#but only inside the ReplicaSet's namespace.
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,7 +26,7 @@ spec:
     metadata:
       labels:
         project: roboshop
-        purpose: rs-demo
+        purpose: Deployment-demo
         tier: frontend
         component: frontend
     spec:

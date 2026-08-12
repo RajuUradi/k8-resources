@@ -11,7 +11,7 @@ metadata:
     tier: frontend
     component: frontend
   annotations:
-    kubernetes.io/change-cause: "moving to 1.28.0"
+    kubernetes.io/change-cause: "moving to 1.29.3"
 spec:
   replicas: 10
   selector:
@@ -32,4 +32,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.28.0
+        image: nginx:1.29.3

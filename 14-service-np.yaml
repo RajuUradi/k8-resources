@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: service
+
+metadata:
+ name: service-nodeport
+
+spec:
+ type: nodeport
+ 
+ selector: # the node port will be created for the pods having same selectors 
+  project: roboshop
+  component: frontend
+  environment: dev
+
+ ports:
+ - protocol: TCP
+   port: 80 #service port
+   targetPort: 80  # container port
+
+#Example 1
+# How selectors work on pods 
+ #selector: 
+ #project: roboshop 
+ #component: catalogue 
+ #env:dev
+
+#for ex: 
+#my pod 1 having labels: 
+#project: roboshop
+#component: catalogue 
+#env:dev 
+
+#pod2: 
+#project: roboshop 
+#component: catalogue 
+#env:prod
+
+#pod3: 
+#project: roboshop 
+#component: catalogue 
+#on which pods does nodeport will be exposed and service communicates with which pod.
+
+#only Pod 1 will be selected.  NodePort is exposed on the worker nodes and pod1 is exposed as backend
+#internet -> workernode:32143 -> service:80 -> pod1: 80 
+#✅ MATCHES
+
+#Pod 2 ❌ Does NOT match because env=prod, not env=dev
+#project: roboshop
+#component: catalogue
+#env: prod
+
+#Pod 3 ❌ Does NOT match because it doesn't have the env label.
+#project: roboshop
+#component: catalogue
+
+  #Example 2
+# How selectors work on pods 
+ #selector: 
+ #project: roboshop 
+ #component: catalogue 
+  
+#my pod 1 having labels: 
+#project: roboshop
+#component: catalogue 
+#env:dev 
+
+#pod2: 
+#project: roboshop 
+#component: catalogue 
+#env:prod
+
+#pod3: 
+#project: roboshop 
+#component: catalogue 
+#on which pods does nodeport will be created.
+
+#all pods will be selected. NodePort is exposed on the worker nodes,
+# and the Service uses its selector to choose Pod 1, Pod 2, and Pod 3 as backends.
+#✅ MATCHES
+#project: roboshop
+#component: catalogue
+
+  
